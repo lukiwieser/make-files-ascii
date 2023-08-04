@@ -16,7 +16,7 @@ Simply execute the script with the following command:
 python main.py
 ```
 
-Next the script will ask for some options like the location of the folder(file. After entering all parameters a preview of the renamed filenames/file-content will be shown.
+Next the script will ask for some options like the location of the folder/file. After entering all parameters, a preview of the renamed filenames/file-content will be shown.
 
 ## Features
 
@@ -26,6 +26,6 @@ Next the script will ask for some options like the location of the folder(file. 
 
 ## Motivation 
 
-Some filesystems do not support special characters. For example Kaggle does only support ASCII filenames and the Apostroph `'` is also not allowed. 
+Some filesystems do not support special characters. For example when uploading a dataset to *Kaggle*, only ASCII filenames are support, and the Apostrophe `'` is also not allowed. 
 
-Therefore it can be usefull to replace such special charachters. Additionally there migth be files that reference these filenames somehow, thus renaming the content of a file could also make sense.
+Therefore it can be useful to replace such special charachters. Additionally there might be files that reference these filenames somehow, thus renaming the content of a file could also make sense.
