@@ -9,9 +9,12 @@ class File:
         self.new_name = new_name
 
 
-def make_string_safe(string: str) -> str:
-    string_ascii = unidecode(string)  # convert unicode string to ascii
-    string_safe = string_ascii.replace("'", " ")  # replace ' since it is invalid char in kaggle
+def make_string_safe(string: str, characters_to_replace: str, replaced_characters_value) -> str:
+    # convert unicode string to ascii
+    string_safe = unidecode(string)
+    # replace other characters
+    for char in characters_to_replace:
+        string_safe = string_safe.replace(char, replaced_characters_value)
     return string_safe
 
 
@@ -44,14 +47,30 @@ def input_binary_decision(decision_text: str) -> bool:
         print("  Try again. Invalid input!")
 
 
+def input_character_replacements() -> (str, str):
+    should_replace_other_characters = input_binary_decision("Want to replace other characters than Unicode e.g. '#$ ?")
+    if not should_replace_other_characters:
+        return "", ""
+
+    print("\nType the characters you want to replace e.g. #%:")
+    characters = input("  > ")
+
+    print("\nWith which character do you want to replace them? [type enter if none]")
+    characters_new = input("  > ")
+
+    return characters, characters_new
+
+
 def rename_filenames() -> None:
     folder_path = input_folder_path()
+    characters_to_replace, replaced_characters_value = input_character_replacements()
 
     # get files 
     files: list[File] = []
     for item in scandir(folder_path):
         if isfile(join(folder_path, item.name)):
-            files.append(File(item.name, make_string_safe(item.name)))
+            new_filename = make_string_safe(item.name, characters_to_replace, replaced_characters_value)
+            files.append(File(item.name, new_filename))
 
     # print new names of files
     print("\nNew Filenames:")
@@ -69,12 +88,12 @@ def rename_filenames() -> None:
 
 def rename_file_contents() -> None:
     file_path = input_file_path()
+    characters_to_replace, replaced_characters_value = input_character_replacements()
 
     print("\nNew File Content:")
-    lines = []
     with open(file_path, mode="r", encoding="utf-8") as f:
         lines = f.read().splitlines()
-        lines = [make_string_safe(line) for line in lines]
+        lines = [make_string_safe(line, characters_to_replace, replaced_characters_value) for line in lines]
         for line in lines:
             print(line)
 

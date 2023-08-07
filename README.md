@@ -6,6 +6,9 @@ Examples:
 - `Åland.txt` → `Aland.txt`
 - `Curaçao.txt` → `Curacao.txt`
 
+You can additionally replace other characters such as `'`:
+- `Côte d'Ivoire.txt` → `Cote d Ivoire.txt`
+
 ## Usage
 
 This project requires Python 3.11 to be installed on your machine, and only works on Windows.
@@ -30,6 +33,7 @@ After entering all parameters, a preview of the renamed filenames/file-content w
 - rename filenames
 - rename content of files
 - see a preview of the changes before renaming
+- optionally replace other characters e.g. Apostrophe `'` with Space ` `
 
 ## Motivation 
 
