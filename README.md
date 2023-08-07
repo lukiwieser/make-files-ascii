@@ -1,6 +1,6 @@
 # Make Files ASCII
 
-Convert filenames from Unicode to ASCI.
+Convert filenames from Unicode to ASCII.
 
 Examples: 
 - `Åland.txt` → `Aland.txt`
