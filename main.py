@@ -102,8 +102,12 @@ def rename_file_contents() -> None:
         with open(file_path, "w") as f:
             f.write('\n'.join(lines) + '\n')
 
+    print("\nfinished")
+
 
 def main() -> None:
+    print("** Make Files ASCII **\n")
+
     print("What do you want to do?:")
     print("  [1] Rename all filenames in a folder")
     print("  [2] Rename content of a file")
