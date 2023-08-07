@@ -11,7 +11,7 @@ You can additionally replace other characters such as `'`:
 
 ## Usage
 
-This project requires Python 3.11 to be installed on your machine, and only works on Windows.
+This project requires Python 3.11 to be installed on your machine.
 
 First install the dependencies by executing the following command in the project folder:
 
@@ -28,6 +28,7 @@ python main.py
 Next the script will ask for some options like the location of the folder/file. 
 After entering all parameters, a preview of the renamed filenames/file-content will be shown.
 
+
 ## Features
 
 - rename filenames
@@ -40,5 +41,9 @@ After entering all parameters, a preview of the renamed filenames/file-content w
 Some filesystems do not support special characters. 
 For example, when uploading a dataset to *Kaggle*, only ASCII filenames are support, and the Apostrophe `'` is also not allowed. 
 
-Therefore it can be useful to replace such special charachters. 
+Therefore it can be useful to replace such special characters. 
 Additionally there might be files that reference these filenames somehow, thus renaming the content of a file could also make sense.
+
+## Supported Platforms
+
+This project was tested on Windows 11 and Ubuntu 22.04.
