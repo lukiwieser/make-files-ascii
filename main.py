@@ -2,15 +2,18 @@ from os import scandir, rename
 from os.path import isfile, join, isdir
 from unidecode import unidecode
 
+
 class File:
     def __init__(self, name, new_name):
         self.name = name
         self.new_name = new_name
 
+
 def make_string_safe(string: str) -> str:
-    string_ascii = unidecode(string) # convert unicode string to ascii
-    string_safe = string_ascii.replace("'"," ") # replace ' since it is invalid char in kaggle
+    string_ascii = unidecode(string)  # convert unicode string to ascii
+    string_safe = string_ascii.replace("'", " ")  # replace ' since it is invalid char in kaggle
     return string_safe
+
 
 def input_file_path() -> str:
     print("\nFile Path:")
@@ -20,6 +23,7 @@ def input_file_path() -> str:
             return path
         print("  Try again. This file does not exist!")
 
+
 def input_folder_path() -> str:
     print("\nFolder Path:")
     while True:
@@ -28,8 +32,9 @@ def input_folder_path() -> str:
             return path
         print("  Try again. This folder does not exist!")
 
-def input_rename_decision() -> bool:
-    print("\nDo you want to rename the files? [y] [n]")
+
+def input_binary_decision(decision_text: str) -> bool:
+    print(f"\n{decision_text} [y] [n]")
     while True:
         decision = input("  > ")
         if decision == "y":
@@ -38,15 +43,6 @@ def input_rename_decision() -> bool:
             return False
         print("  Try again. Invalid input!")
 
-def input_rename_decision_filecontents() -> bool:
-    print("\nDo you want to rename the content of the file? [y] [n]")
-    while True:
-        decision = input("  > ")
-        if decision == "y":
-            return True
-        if decision == "n":
-            return False
-        print("  Try again. Invalid input!")
 
 def rename_filenames() -> None:
     folder_path = input_folder_path()
@@ -63,12 +59,13 @@ def rename_filenames() -> None:
         print(file.new_name)
 
     # rename files (if yes)
-    should_rename_files = input_rename_decision()
+    should_rename_files = input_binary_decision("Do you want to rename the files?")
     if should_rename_files:
         for file in files:
             rename(join(folder_path, file.name), join(folder_path, file.new_name))
 
     print("\nfinished")
+
 
 def rename_file_contents() -> None:
     file_path = input_file_path()
@@ -81,7 +78,7 @@ def rename_file_contents() -> None:
         for line in lines:
             print(line)
 
-    should_rename_content = input_rename_decision_filecontents()
+    should_rename_content = input_binary_decision("Do you want to rename the content of the file?")
     if should_rename_content:
         with open(file_path, "w") as f:
             f.write('\n'.join(lines) + '\n')
@@ -102,4 +99,3 @@ def main() -> None:
 
 
 main()
-
