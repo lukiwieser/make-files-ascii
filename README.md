@@ -10,7 +10,13 @@ Examples:
 
 This project requires Python 3.11 to be installed on your machine, and only works on Windows.
 
-Simply execute the script with the following command:
+First install the dependencies by executing the following command in the project folder:
+
+```console
+pip install -r requirements.txt
+```
+
+Then simply execute the script with the following command:
 
 ```console
 python main.py
