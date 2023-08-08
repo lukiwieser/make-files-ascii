@@ -11,7 +11,7 @@ You can additionally replace other characters such as `'`:
 
 ## Usage
 
-This project requires at Python 3.6+ to be installed on your machine.
+This project requires Python 3.6+ to be installed on your machine.
 
 First install the dependencies by executing the following command in the project folder:
 
@@ -39,7 +39,7 @@ After entering all parameters, a preview of the renamed filenames/file-content w
 ## Motivation 
 
 Some filesystems do not support special characters. 
-For example, when uploading a dataset to *Kaggle*, only ASCII filenames are support, and the Apostrophe `'` is also not allowed. 
+For example, when uploading a dataset to *Kaggle*, only ASCII filenames are supported, and the Apostrophe `'` is also not allowed. 
 
 Therefore it can be useful to replace such special characters. 
 Additionally there might be files that reference these filenames somehow, thus renaming the content of a file could also make sense.
