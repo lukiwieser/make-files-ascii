@@ -121,4 +121,5 @@ def main() -> None:
         print("  Error - This Selection does not exist!")
 
 
-main()
+if __name__ == "__main__":
+    main()
