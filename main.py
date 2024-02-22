@@ -1,5 +1,6 @@
 from os import scandir, rename
 from os.path import isfile, join, isdir
+
 from unidecode import unidecode
 
 
@@ -47,7 +48,7 @@ def input_binary_decision(decision_text: str) -> bool:
         print("  Try again. Invalid input!")
 
 
-def input_character_replacements() -> (str, str):
+def input_character_replacements() -> tuple[str, str]:
     should_replace_other_characters = input_binary_decision("Want to replace other characters than Unicode e.g. '#$ ?")
     if not should_replace_other_characters:
         return "", ""
@@ -121,4 +122,5 @@ def main() -> None:
         print("  Error - This Selection does not exist!")
 
 
-main()
+if __name__ == "__main__":
+    main()
