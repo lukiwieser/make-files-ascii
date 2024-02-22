@@ -11,7 +11,7 @@ You can additionally replace other characters such as `'`:
 
 ## Usage
 
-This project requires Python 3.6+ to be installed on your machine.
+This project requires Python 3.9+ to be installed on your machine.
 
 First install the dependencies by executing the following command in the project folder:
 
