@@ -39,10 +39,10 @@ After entering all parameters, a preview of the renamed filenames/file-content w
 ## Motivation 
 
 Some filesystems do not support special characters. 
-For example, when uploading a dataset to *Kaggle*, only ASCII filenames are supported, and the Apostrophe `'` is also not allowed. 
+For example, when uploading a dataset to [Kaggle](https://www.kaggle.com/), only ASCII filenames are supported, and the Apostrophe `'` is also not allowed. 
 
-Therefore it can be useful to replace such special characters. 
-Additionally there might be files that reference these filenames somehow, thus renaming the content of a file could also make sense.
+Therefore, it can be useful to replace such special characters. 
+Additionally, there might be files that reference these filenames somehow, thus renaming the content of a file could also make sense.
 
 ## Supported Platforms
 
